@@ -53,3 +53,8 @@ jobs:
           force-with-lease: true
           directory: "."
           autocommit: ${{ secrets.autocommit }}
+      - name: Delete Workflow Runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 30
+          keep_minimum_runs: 6
